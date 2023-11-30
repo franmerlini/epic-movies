@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@epic-movies/home/feature": ["libs/home/feature/src/index.ts"],
+      "@epic-movies/libs/home/data-access": [
+        "libs/home/data-access/src/index.ts"
+      ],
       "@epic-movies/libs/home/ui/movie-card": [
         "libs/home/ui/movie-card/src/index.ts"
       ],
