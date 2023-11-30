@@ -22,6 +22,9 @@
       "@epic-movies/libs/home/ui/movie-card": [
         "libs/home/ui/movie-card/src/index.ts"
       ],
+      "@epic-movies/libs/shared/app-config": [
+        "libs/shared/app-config/src/index.ts"
+      ],
       "@epic-movies/libs/shared/data-access/movies-api": [
         "libs/shared/data-access/movies-api/src/index.ts"
       ],
