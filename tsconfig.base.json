@@ -22,6 +22,9 @@
       "@epic-movies/libs/home/ui/movie-card": [
         "libs/home/ui/movie-card/src/index.ts"
       ],
+      "@epic-movies/libs/shared/data-access/movies-api": [
+        "libs/shared/data-access/movies-api/src/index.ts"
+      ],
       "@epic-movies/shell/feature": ["libs/shell/feature/src/index.ts"],
       "@epic-movies/shell/ui/footer": ["libs/shell/ui/footer/src/index.ts"],
       "@epic-movies/shell/ui/header": ["libs/shell/ui/header/src/index.ts"],
