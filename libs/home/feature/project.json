@@ -1,9 +1,9 @@
 {
-  "name": "home",
+  "name": "home-feature",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/home/feature/src",
   "prefix": "lib",
-  "tags": [],
+  "tags": ["type:feature"],
   "projectType": "library",
   "targets": {
     "test": {

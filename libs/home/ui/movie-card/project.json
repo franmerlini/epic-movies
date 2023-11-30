@@ -1,9 +1,9 @@
 {
-  "name": "movie-card",
+  "name": "home-ui-movie-card",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/home/ui/movie-card/src",
   "prefix": "lib",
-  "tags": [],
+  "tags": ["type:ui"],
   "projectType": "library",
   "targets": {
     "test": {

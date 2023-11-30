@@ -1,9 +1,9 @@
 {
-  "name": "footer",
+  "name": "shell-ui-footer",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shell/ui/footer/src",
   "prefix": "lib",
-  "tags": [],
+  "tags": ["type:ui"],
   "projectType": "library",
   "targets": {
     "test": {

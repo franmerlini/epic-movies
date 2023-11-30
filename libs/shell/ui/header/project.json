@@ -1,9 +1,9 @@
 {
-  "name": "header",
+  "name": "shell-ui-header",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shell/ui/header/src",
   "prefix": "lib",
-  "tags": [],
+  "tags": ["type:ui"],
   "projectType": "library",
   "targets": {
     "test": {
