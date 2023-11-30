@@ -1,0 +1,29 @@
+{
+  "name": "shared-data-access-mocks",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/data-access/mocks/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/data-access/mocks",
+        "main": "libs/shared/data-access/mocks/src/index.ts",
+        "tsConfig": "libs/shared/data-access/mocks/tsconfig.lib.json",
+        "assets": ["libs/shared/data-access/mocks/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/data-access/mocks/**/*.ts",
+          "libs/shared/data-access/mocks/package.json"
+        ]
+      }
+    }
+  },
+  "tags": ["type:util"]
+}

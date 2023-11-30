@@ -26,6 +26,9 @@
         "libs/shared/app-config/src/index.ts"
       ],
       "@epic-movies/libs/shared/assets": ["libs/shared/assets/src/index.ts"],
+      "@epic-movies/libs/shared/data-access/mocks": [
+        "libs/shared/data-access/mocks/src/index.ts"
+      ],
       "@epic-movies/libs/shared/data-access/models": [
         "libs/shared/data-access/models/src/index.ts"
       ],
