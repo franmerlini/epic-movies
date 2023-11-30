@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@epic-movies/shell/feature": ["libs/shell/feature/src/index.ts"]
+      "@epic-movies/shell/feature": ["libs/shell/feature/src/index.ts"],
+      "@epic-movies/shell/ui/footer": ["libs/shell/ui/footer/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
