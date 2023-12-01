@@ -39,7 +39,7 @@ dependencies:
     specifier: ~16.0.0
     version: 16.0.1(@angular/core@16.2.12)(@ngrx/store@16.0.1)(rxjs@7.8.1)
   '@ngrx/router-store':
-    specifier: ~16.0.0
+    specifier: ~16.0.1
     version: 16.0.1(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/router@16.2.12)(@ngrx/store@16.0.1)(rxjs@7.8.1)
   '@ngrx/store':
     specifier: ~16.0.0
