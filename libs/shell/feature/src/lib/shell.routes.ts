@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 
 import { LayoutComponent } from '@epic-movies/shell/ui/layout';
 
-export const shellRoutes: Route[] = [
+export const ShellRoutes: Route[] = [
   {
     path: '',
     component: LayoutComponent,
@@ -10,7 +10,7 @@ export const shellRoutes: Route[] = [
       {
         path: '',
         loadChildren: () =>
-          import('@epic-movies/home/feature').then((m) => m.HomeModule),
+          import('@epic-movies/home/feature').then((m) => m.HomeRoutes),
       },
     ],
   },
