@@ -1,17 +1,22 @@
-import { ApplicationConfig, isDevMode } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
-import { shellRoutes } from '@epic-movies/shell/feature';
+import { getAppConfigProvider } from '@epic-movies/libs/shared/app-config';
+import { ShellRoutes } from '@epic-movies/shell/feature';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideStoreDevtools({ logOnly: !isDevMode() }),
+    provideRouter(ShellRoutes),
+    provideStoreDevtools(),
     provideEffects(),
     provideStore(),
-    provideRouter(shellRoutes),
+    provideHttpClient(),
+    getAppConfigProvider(environment),
   ],
 };
