@@ -9,7 +9,7 @@ export const mockedMovies = [
     genre: ['Action', 'Sci-Fi'],
     releasedDate: '3 September 2020',
     trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
-    image: 'Tenet.png',
+    image: 'Tenet',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const mockedMovies = [
     genre: ['Action', 'Animation', 'Adventure'],
     releasedDate: '14 December 2018',
     trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0',
-    image: 'Spider Man.png',
+    image: 'Spider Man',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const mockedMovies = [
     genre: ['Comedy', 'Crime', 'Drama'],
     releasedDate: '27 November 2019',
     trailerLink: 'https://www.youtube.com/watch?v=qGqiHJTsRkQ',
-    image: 'Knives Out.png',
+    image: 'Knives Out',
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const mockedMovies = [
     genre: ['Action', 'Adventure', 'Comedy'],
     releasedDate: '1 August 2014',
     trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA',
-    image: 'Guardians of The Galaxy.png',
+    image: 'Guardians of The Galaxy',
   },
   {
     id: 5,
@@ -57,6 +57,6 @@ export const mockedMovies = [
     genre: ['Action', 'Adventure', 'Sci-Fi'],
     releasedDate: '1 May 2015',
     trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do',
-    image: 'Avengers.png',
+    image: 'Avengers',
   },
 ];
