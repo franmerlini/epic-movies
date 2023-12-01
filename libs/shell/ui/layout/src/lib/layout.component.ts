@@ -12,7 +12,7 @@ import { HeaderComponent } from '@epic-movies/shell/ui/header';
   template: `
     <div class="min-h-screen flex flex-col">
       <lib-header />
-      <main class="flex grow">
+      <main class="flex justify-center grow">
         <router-outlet />
       </main>
       <lib-footer />
