@@ -38,4 +38,7 @@ const reducer = createReducer(
 export const MoviesFeature = createFeature({
   name: 'moviesFeature',
   reducer,
+  extraSelectors: ({ selectMoviesFeatureState }) => ({
+    ...moviesAdapter.getSelectors(selectMoviesFeatureState),
+  }),
 });
