@@ -35,7 +35,7 @@ const reducer = createReducer(
   }))
 );
 
-export const moviesFeature = createFeature({
+export const MoviesFeature = createFeature({
   name: 'moviesFeature',
   reducer,
 });
