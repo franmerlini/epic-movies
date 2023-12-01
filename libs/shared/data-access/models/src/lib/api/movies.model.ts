@@ -7,4 +7,5 @@ export type Movie = {
   genre: string[];
   releasedDate: string;
   trailerLink: string;
+  image: string;
 };
