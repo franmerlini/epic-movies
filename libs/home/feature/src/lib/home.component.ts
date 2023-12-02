@@ -1,17 +1,9 @@
 import { AsyncPipe, NgFor } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
-import {
-  MoviesFeature,
-  MoviesPageActions,
-} from '@epic-movies/libs/home/data-access';
+import { MoviesFeature, MoviesPageActions } from '@epic-movies/libs/home/data-access';
 import { MovieCardComponent } from '@epic-movies/libs/home/ui/movie-card';
 import { Movie } from '@epic-movies/libs/shared/data-access/models';
 
@@ -20,16 +12,11 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
   standalone: true,
   imports: [MovieCardComponent, NgFor, AsyncPipe],
   template: `
-    <div class="container mx-auto p-4">
+    <div class="p-4">
       <h1 class="text-2xl mb-2">Trending</h1>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"
-      >
-        <lib-movie-card
-          *ngFor="let movie of movies$ | async; trackBy: identify"
-          [movie]="movie"
-        />
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+        <lib-movie-card *ngFor="let movie of movies$ | async; trackBy: identify" [movie]="movie" />
       </div>
     </div>
   `,
