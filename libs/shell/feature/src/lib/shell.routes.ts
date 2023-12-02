@@ -13,7 +13,7 @@ export const ShellRoutes: Route[] = [
       },
       {
         path: 'movies',
-        loadChildren: () => import('@epic-movies/libs/movies/feature').then((m) => m.MoviesRoutes),
+        loadChildren: () => import('@epic-movies/libs/movie/feature/shell').then((m) => m.MoviesRoutes),
       },
       {
         path: '',

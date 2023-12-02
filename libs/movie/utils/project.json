@@ -1,16 +1,16 @@
 {
-  "name": "movies-ui-movie-detail",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/movies/ui/movie-detail/src",
+  "name": "movie-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/movie/utils/src",
   "prefix": "lib",
-  "tags": ["type:ui"],
+  "tags": ["type:util"],
   "projectType": "library",
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/movies/ui/movie-detail/jest.config.ts",
+        "jestConfig": "libs/movie/utils/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -24,7 +24,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/movies/ui/movie-detail/**/*.ts", "libs/movies/ui/movie-detail/**/*.html"]
+        "lintFilePatterns": ["libs/movie/utils/**/*.ts", "libs/movie/utils/**/*.html"]
       }
     }
   }

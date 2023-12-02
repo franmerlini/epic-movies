@@ -1,17 +1,16 @@
 import { Route } from '@angular/router';
 
-import { MovieDetailComponent } from '@epic-movies/libs/movies/ui/movie-detail';
-import { MoviesComponent } from './movies.component';
+import { MovieDetailComponent } from '@epic-movies/libs/movie/ui/movie-detail';
+import { ExistsMovieGuard } from '@epic-movies/libs/movie/utils';
 
 export const MoviesRoutes: Route[] = [
   {
     path: '',
-    component: MoviesComponent,
     providers: [],
   },
   {
     path: ':id',
     component: MovieDetailComponent,
-    providers: [],
+    canActivate: [ExistsMovieGuard],
   },
 ];
