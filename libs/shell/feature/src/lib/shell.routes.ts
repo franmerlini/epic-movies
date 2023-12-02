@@ -8,13 +8,22 @@ export const ShellRoutes: Route[] = [
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: 'browse',
         loadChildren: () => import('@epic-movies/libs/home/feature').then((m) => m.HomeRoutes),
       },
       {
         path: 'movies',
         loadChildren: () => import('@epic-movies/libs/movies/feature').then((m) => m.MoviesRoutes),
       },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'browse',
+      },
     ],
+  },
+  {
+    path: '**',
+    redirectTo: 'browse',
   },
 ];
