@@ -1,5 +1,26 @@
 <div
-  class="shadow-xl rounded-2xl max-w-[250px] max-h-[300px] overflow-hidden object-fill"
+  class="relative w-full inline-block rounded-2xl overflow-hidden cursor-pointer"
 >
-  <img class="w-full h-full" [src]="imageSrc" [alt]="movie?.image" />
+  <div class="badge badge-primary absolute top-4 right-4 z-10">
+    On my watchlist
+  </div>
+
+  <img
+    class="w-full h-[500px] sm:h-[350px] md:h-[400px] lg:h-[500px] block object-cover object-top"
+    [src]="imageUrl"
+    [alt]="movie?.image"
+  />
+
+  <div
+    class="absolute top-0 left-0 w-full h-[500px] sm:h-[350px] md:h-[400px] lg:h-[500px] bg-white/80 dark:bg-black/80 opacity-0 hover:opacity-100 z-20"
+  >
+    <div class="flex flex-col justify-center items-center h-full">
+      <p class="whitespace-normal text-xs md:text-md lg:text-lg text-center">
+        {{ movie?.title }}
+      </p>
+      <p class="whitespace-normal text-xs md:text-md lg:text-lg text-center">
+        ({{ year }})
+      </p>
+    </div>
+  </div>
 </div>

@@ -4,7 +4,6 @@ import {
   Component,
   Input,
   OnChanges,
-  SimpleChanges,
 } from '@angular/core';
 
 import { Movie } from '@epic-movies/libs/shared/data-access/models';
@@ -19,12 +18,18 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
 })
 export class MovieCardComponent implements OnChanges {
   @Input({ required: true }) movie: Movie | undefined;
+  @Input() isOnWatchlist: boolean | undefined;
 
-  imageSrc: string | undefined;
+  imageUrl: string | undefined;
+  year: number | undefined;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['movie']?.currentValue) {
-      this.imageSrc = `../../../../../../../../assets/images/${this.movie?.image}.png`;
+  ngOnChanges(): void {
+    if (this.movie?.image) {
+      this.imageUrl = `../../../../../../../../assets/images/${this.movie.image}.png`;
+    }
+
+    if (this.movie?.releasedDate) {
+      this.year = new Date(this.movie.releasedDate).getFullYear();
     }
   }
 }
