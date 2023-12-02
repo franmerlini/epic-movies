@@ -24,7 +24,7 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
       <h1 class="text-2xl mb-2">Trending</h1>
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"
       >
         <lib-movie-card
           *ngFor="let movie of movies$ | async; trackBy: identify"
