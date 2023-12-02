@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { LayoutComponent } from '@epic-movies/shell/ui/layout';
+import { LayoutComponent } from '@epic-movies/libs/shell/ui/layout';
 
 export const ShellRoutes: Route[] = [
   {
@@ -9,8 +9,7 @@ export const ShellRoutes: Route[] = [
     children: [
       {
         path: '',
-        loadChildren: () =>
-          import('@epic-movies/home/feature').then((m) => m.HomeRoutes),
+        loadChildren: () => import('@epic-movies/libs/home/feature').then((m) => m.HomeRoutes),
       },
     ],
   },

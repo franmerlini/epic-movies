@@ -8,7 +8,7 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { getAppConfigProvider } from '@epic-movies/libs/shared/app-config';
-import { ShellRoutes } from '@epic-movies/shell/feature';
+import { ShellRoutes } from '@epic-movies/libs/shell/feature';
 
 import { environment } from '../environments/environment';
 import { ROOT_EFFECTS, ROOT_REDUCERS } from './store';

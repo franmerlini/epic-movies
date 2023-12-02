@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { FooterComponent } from '@epic-movies/shell/ui/footer';
-import { HeaderComponent } from '@epic-movies/shell/ui/header';
+import { FooterComponent } from '@epic-movies/libs/shell/ui/footer';
+import { HeaderComponent } from '@epic-movies/libs/shell/ui/header';
 
 @Component({
   selector: 'lib-layout',

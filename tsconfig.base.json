@@ -15,30 +15,19 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@epic-movies/home/feature": ["libs/home/feature/src/index.ts"],
-      "@epic-movies/libs/home/data-access": [
-        "libs/home/data-access/src/index.ts"
-      ],
-      "@epic-movies/libs/home/ui/movie-card": [
-        "libs/home/ui/movie-card/src/index.ts"
-      ],
-      "@epic-movies/libs/shared/app-config": [
-        "libs/shared/app-config/src/index.ts"
-      ],
+      "@epic-movies/libs/home/feature": ["libs/home/feature/src/index.ts"],
+      "@epic-movies/libs/home/data-access": ["libs/home/data-access/src/index.ts"],
+      "@epic-movies/libs/home/ui/movie-card": ["libs/home/ui/movie-card/src/index.ts"],
+      "@epic-movies/libs/movies/feature": ["libs/movies/feature/src/index.ts"],
+      "@epic-movies/libs/shared/app-config": ["libs/shared/app-config/src/index.ts"],
       "@epic-movies/libs/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@epic-movies/libs/shared/data-access/mocks": [
-        "libs/shared/data-access/mocks/src/index.ts"
-      ],
-      "@epic-movies/libs/shared/data-access/models": [
-        "libs/shared/data-access/models/src/index.ts"
-      ],
-      "@epic-movies/libs/shared/data-access/movies-api": [
-        "libs/shared/data-access/movies-api/src/index.ts"
-      ],
-      "@epic-movies/shell/feature": ["libs/shell/feature/src/index.ts"],
-      "@epic-movies/shell/ui/footer": ["libs/shell/ui/footer/src/index.ts"],
-      "@epic-movies/shell/ui/header": ["libs/shell/ui/header/src/index.ts"],
-      "@epic-movies/shell/ui/layout": ["libs/shell/ui/layout/src/index.ts"]
+      "@epic-movies/libs/shared/data-access/mocks": ["libs/shared/data-access/mocks/src/index.ts"],
+      "@epic-movies/libs/shared/data-access/models": ["libs/shared/data-access/models/src/index.ts"],
+      "@epic-movies/libs/shared/data-access/movies-api": ["libs/shared/data-access/movies-api/src/index.ts"],
+      "@epic-movies/libs/shell/feature": ["libs/shell/feature/src/index.ts"],
+      "@epic-movies/libs/shell/ui/footer": ["libs/shell/ui/footer/src/index.ts"],
+      "@epic-movies/libs/shell/ui/header": ["libs/shell/ui/header/src/index.ts"],
+      "@epic-movies/libs/shell/ui/layout": ["libs/shell/ui/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
