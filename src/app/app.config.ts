@@ -10,9 +10,8 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { getAppConfigProvider } from '@epic-movies/libs/shared/app-config';
 import { ShellRoutes } from '@epic-movies/libs/shell/feature';
 
+import { CustomSerializer, ROOT_EFFECTS, ROOT_REDUCERS, RouterFeatureKey } from '@epic-movies/libs/shared/store';
 import { environment } from '../environments/environment';
-import { ROOT_EFFECTS, ROOT_REDUCERS } from './store';
-import * as fromRouter from './store/reducers/router.reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,8 +19,8 @@ export const appConfig: ApplicationConfig = {
     provideStore(ROOT_REDUCERS),
     provideEffects(ROOT_EFFECTS),
     provideRouterStore({
-      stateKey: fromRouter.routerFeatureKey,
-      serializer: fromRouter.CustomSerializer,
+      stateKey: RouterFeatureKey,
+      serializer: CustomSerializer,
     }),
     provideStoreDevtools(),
     provideHttpClient(),
