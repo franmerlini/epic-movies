@@ -27,6 +27,7 @@
       "@epic-movies/libs/shared/data-access/mocks": ["libs/shared/data-access/mocks/src/index.ts"],
       "@epic-movies/libs/shared/data-access/models": ["libs/shared/data-access/models/src/index.ts"],
       "@epic-movies/libs/shared/data-access/movies-api": ["libs/shared/data-access/movies-api/src/index.ts"],
+      "@epic-movies/libs/shared/store": ["libs/shared/store/src/index.ts"],
       "@epic-movies/libs/shell/feature": ["libs/shell/feature/src/index.ts"],
       "@epic-movies/libs/shell/ui/footer": ["libs/shell/ui/footer/src/index.ts"],
       "@epic-movies/libs/shell/ui/header": ["libs/shell/ui/header/src/index.ts"],
