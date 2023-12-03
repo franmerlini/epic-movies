@@ -1,1 +1,1 @@
-export * from './lib/home-ui-actions-bar.component';
+export * from './lib/actions-bar.component';

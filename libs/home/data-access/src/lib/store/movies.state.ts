@@ -43,5 +43,39 @@ export const MoviesFeature = createFeature({
   extraSelectors: ({ selectMoviesFeatureState, selectEntities }) => ({
     ...moviesAdapter.getSelectors(selectMoviesFeatureState),
     selectSelectedMovie: createSelector(selectEntities, selectCurrentRoute, (entities, { params }) => entities[params['id']]),
+    selectMoviesOrderedByTitleAsc: createSelector(selectEntities, (entities) =>
+      Object.values(entities).sort((a, b) => {
+        if (a && b) {
+          return a.title.localeCompare(b.title);
+        }
+        return 0;
+      })
+    ),
+    selectMoviesOrderedByTitleDesc: createSelector(selectEntities, (entities) =>
+      Object.values(entities).sort((a, b) => {
+        if (a && b) {
+          return b.title.localeCompare(a.title);
+        }
+        return 0;
+      })
+    ),
+    selectMoviesOrderedByGenreAsc: createSelector(selectEntities, (entities) => {
+      const movies = Object.values(entities);
+      return movies.sort((a, b) => {
+        if (a && b) {
+          return a.genres[0].localeCompare(b.genres[0]);
+        }
+        return 0;
+      });
+    }),
+    selectMoviesOrderedByGenreDesc: createSelector(selectEntities, (entities) => {
+      const movies = Object.values(entities);
+      return movies.sort((a, b) => {
+        if (a && b) {
+          return b.genres[0].localeCompare(a.genres[0]);
+        }
+        return 0;
+      });
+    }),
   }),
 });

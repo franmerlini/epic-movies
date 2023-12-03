@@ -1,0 +1,12 @@
+<div class="flex justify-end">
+  <div class="flex gap-4 items-center">
+    <span>Order by</span>
+    <select #select class="select select-bordered max-w-xs" (change)="onChange($event)">
+      <option [value]="sortByEnum.SUGGESTED">Suggested</option>
+      <option [value]="sortByEnum.TITLE_ASC">Title (A-Z)</option>
+      <option [value]="sortByEnum.TITLE_DESC">Title (Z-A)</option>
+      <option [value]="sortByEnum.GENRE_ASC">Genre (A-Z)</option>
+      <option [value]="sortByEnum.GENRE_ASC">Genre (Z-A)</option>
+    </select>
+  </div>
+</div>
