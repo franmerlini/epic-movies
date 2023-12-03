@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,4 +9,18 @@ import { RouterLink } from '@angular/router';
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {}
+export class HeaderComponent implements AfterViewInit {
+  @ViewChild('searchButton') searchIcon!: ElementRef<HTMLButtonElement>;
+  @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
+
+  ngAfterViewInit(): void {
+    this.searchIcon.nativeElement.addEventListener('click', () => {
+      this.searchInput.nativeElement.classList.remove('hidden');
+      this.searchInput.nativeElement.focus();
+    });
+
+    this.searchInput.nativeElement.addEventListener('blur', () => {
+      this.searchInput.nativeElement.classList.add('hidden');
+    });
+  }
+}
