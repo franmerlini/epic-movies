@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
 @Component({
   selector: 'lib-movie-card',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgIf, NgFor, RouterLink],
   templateUrl: './movie-card.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

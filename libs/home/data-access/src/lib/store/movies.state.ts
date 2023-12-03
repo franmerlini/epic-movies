@@ -21,7 +21,15 @@ const reducer = createReducer(
   initialState,
   on(MoviesPageActions.init, (state) => ({ ...state, loaded: false, error: null })),
   on(MoviesApiActions.loadMoviesSuccess, (state, { movies }) => moviesAdapter.setAll(movies, { ...state, loaded: true })),
-  on(MoviesApiActions.loadMoviesFailure, (state, { error }) => ({ ...state, error }))
+  on(MoviesApiActions.loadMoviesFailure, (state, { error }) => ({ ...state, error })),
+  on(MoviesApiActions.loadMoviesOnWatchlistSuccess, (state, { movies }) =>
+    moviesAdapter.upsertMany(
+      movies.map((movie) => ({ ...movie, isOnWatchlist: true })),
+      state
+    )
+  ),
+  on(MoviesApiActions.loadMoviesOnWatchlistFailure, (state, { error }) => ({ ...state, error })),
+  on(MoviesPageActions.addToWatchlist, (state, { movie }) => moviesAdapter.upsertOne({ ...movie, isOnWatchlist: true }, state))
 );
 
 export const MoviesFeature = createFeature({

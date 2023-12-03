@@ -14,7 +14,7 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
 export class MovieDetailComponent implements OnChanges {
   @Input({ required: true }) movie!: Movie;
 
-  @Output() addToWishlist = new EventEmitter<Movie>();
+  @Output() addToWatchlist = new EventEmitter<Movie>();
 
   imageUrl!: string;
   inWatchlist = false;
@@ -26,6 +26,6 @@ export class MovieDetailComponent implements OnChanges {
   }
 
   onClick(): void {
-    this.addToWishlist.emit(this.movie);
+    this.addToWatchlist.emit(this.movie);
   }
 }

@@ -3,8 +3,9 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
-import { MoviesFeature } from '@epic-movies/libs/home/data-access';
+import { MoviesFeature, MoviesPageActions } from '@epic-movies/libs/home/data-access';
 import { MovieDetailComponent } from '@epic-movies/libs/movie/ui/movie-detail';
+import { Movie } from '@epic-movies/libs/shared/data-access/models';
 
 @Component({
   selector: 'lib-movie',
@@ -13,7 +14,7 @@ import { MovieDetailComponent } from '@epic-movies/libs/movie/ui/movie-detail';
   template: `
     <div class="container mx-auto p-8">
       <ng-container *ngIf="movie$ | async as movie">
-        <lib-movie-detail [movie]="movie" />
+        <lib-movie-detail [movie]="movie" (addToWatchlist)="onAddToWatchList($event)" />
       </ng-container>
     </div>
   `,
@@ -23,4 +24,8 @@ export class MovieComponent {
   private readonly store = inject(Store);
 
   movie$ = this.store.select(MoviesFeature.selectSelectedMovie);
+
+  onAddToWatchList(movie: Movie): void {
+    this.store.dispatch(MoviesPageActions.addToWatchlist(movie));
+  }
 }

@@ -8,4 +8,5 @@ export type Movie = {
   releasedDate: string;
   trailerLink: string;
   image: string;
+  isOnWatchlist?: boolean;
 };
