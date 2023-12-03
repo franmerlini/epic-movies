@@ -44,7 +44,7 @@
 
     <div class="hidden sm:flex items-center">
       <label class="swap swap-rotate">
-        <input type="checkbox" class="theme-controller" value="dracula" />
+        <input type="checkbox" class="theme-controller" value="dracula" [checked]="isDarkMode" (change)="setIsDarkMode($event)" />
 
         <!-- Sun icon -->
         <svg class="swap-on w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
