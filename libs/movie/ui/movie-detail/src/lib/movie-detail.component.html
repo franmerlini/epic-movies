@@ -8,15 +8,15 @@
       <div class="flex justify-between items-center">
         <h1 class="text-4xl font-bold">{{ movie.title }}</h1>
 
-        <button class="btn btn-primary" (click)="onClick()">
-          <ng-container *ngIf="inWatchlist; else plusIcon">
+        <ng-container *ngIf="movie.isOnWatchlist; else addButton">
+          <button class="btn btn-primary" (click)="remove()">
             <!-- Minus icon -->
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
             </svg>
-          </ng-container>
-          {{ movie.isOnWatchlist ? 'Remove from' : 'Add to' }} watchlist
-        </button>
+            Remove from watchlist
+          </button>
+        </ng-container>
       </div>
 
       <p>{{ movie.description }}</p>
@@ -56,9 +56,12 @@
   </div>
 </div>
 
-<ng-template #plusIcon>
-  <!-- Plus icon -->
-  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-  </svg>
+<ng-template #addButton>
+  <button class="btn btn-primary" (click)="add()">
+    <!-- Plus icon -->
+    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+    </svg>
+    Add to watchlist
+  </button>
 </ng-template>

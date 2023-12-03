@@ -14,7 +14,11 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
   template: `
     <div class="container mx-auto p-8">
       <ng-container *ngIf="movie$ | async as movie">
-        <lib-movie-detail [movie]="movie" (addToWatchlist)="onAddToWatchList($event)" />
+        <lib-movie-detail
+          [movie]="movie"
+          (addToWatchlist)="onAddToWatchList($event)"
+          (removeFromWatchlist)="onRemoveFromWatchlist($event)"
+        />
       </ng-container>
     </div>
   `,
@@ -27,5 +31,9 @@ export class MovieComponent {
 
   onAddToWatchList(movie: Movie): void {
     this.store.dispatch(MoviesPageActions.addToWatchlist(movie));
+  }
+
+  onRemoveFromWatchlist(movieId: number): void {
+    this.store.dispatch(MoviesPageActions.removeFromWatchlist(movieId));
   }
 }

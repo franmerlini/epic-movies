@@ -17,6 +17,7 @@ export class MovieCardComponent implements OnChanges {
   @Input() isOnWatchlist!: boolean;
 
   @Output() addToWatchlist = new EventEmitter<Movie>();
+  @Output() removeFromWatchlist = new EventEmitter<number>();
 
   imageUrl!: string;
   year!: number;
@@ -34,5 +35,10 @@ export class MovieCardComponent implements OnChanges {
   add(event: Event): void {
     event.stopPropagation();
     this.addToWatchlist.emit(this.movie);
+  }
+
+  remove(event: Event): void {
+    event.stopPropagation();
+    this.removeFromWatchlist.emit(this.movie.id);
   }
 }

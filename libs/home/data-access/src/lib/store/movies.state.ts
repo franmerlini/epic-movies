@@ -29,7 +29,12 @@ const reducer = createReducer(
     )
   ),
   on(MoviesApiActions.loadMoviesOnWatchlistFailure, (state, { error }) => ({ ...state, error })),
-  on(MoviesPageActions.addToWatchlist, (state, { movie }) => moviesAdapter.upsertOne({ ...movie, isOnWatchlist: true }, state))
+  on(MoviesPageActions.addToWatchlist, (state, { movie }) => moviesAdapter.upsertOne({ ...movie, isOnWatchlist: true }, state)),
+  on(MoviesApiActions.addToWatchlistFailure, (state, { error }) => ({ ...state, error })),
+  on(MoviesPageActions.removeFromWatchlist, (state, { movieId }) =>
+    moviesAdapter.updateOne({ id: movieId, changes: { isOnWatchlist: false } }, state)
+  ),
+  on(MoviesApiActions.removeFromWatchlistFailure, (state, { error }) => ({ ...state, error }))
 );
 
 export const MoviesFeature = createFeature({

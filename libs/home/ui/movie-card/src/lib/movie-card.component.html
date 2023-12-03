@@ -38,9 +38,9 @@
           </button>
         </div>
 
-        <ng-container *ngIf="movie.isOnWatchlist; else plusCircle">
+        <ng-container *ngIf="movie.isOnWatchlist; else addButton">
           <div class="tooltip" data-tip="Remove from watchlist">
-            <button class="transition-opacity duration-300 hover:opacity-70">
+            <button class="transition-opacity duration-300 hover:opacity-70" (click)="remove($event)">
               <!-- Check circle icon -->
               <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<ng-template #plusCircle>
+<ng-template #addButton>
   <div class="tooltip" data-tip="Add to watchlist">
     <button class="transition-opacity duration-300 hover:opacity-70" (click)="add($event)">
       <!-- Plus circle icon -->

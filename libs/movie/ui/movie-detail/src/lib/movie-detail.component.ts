@@ -15,9 +15,9 @@ export class MovieDetailComponent implements OnChanges {
   @Input({ required: true }) movie!: Movie;
 
   @Output() addToWatchlist = new EventEmitter<Movie>();
+  @Output() removeFromWatchlist = new EventEmitter<number>();
 
   imageUrl!: string;
-  inWatchlist = false;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['movie']?.currentValue?.image) {
@@ -25,7 +25,11 @@ export class MovieDetailComponent implements OnChanges {
     }
   }
 
-  onClick(): void {
+  add(): void {
     this.addToWatchlist.emit(this.movie);
+  }
+
+  remove(): void {
+    this.removeFromWatchlist.emit(this.movie.id);
   }
 }

@@ -49,4 +49,18 @@ const addToWatchlist$ = createEffect(
   { functional: true }
 );
 
-export const MoviesEffects = { init$, moviesOnWatchlist$, addToWatchlist$ };
+const removeFromWatchlist$ = createEffect(
+  (actions$ = inject(Actions), moviesService = inject(MoviesApiService)) =>
+    actions$.pipe(
+      ofType(MoviesPageActions.removeFromWatchlist),
+      switchMap(({ movieId }) =>
+        moviesService.removeFromWatchlist(movieId).pipe(
+          map(() => MoviesApiActions.removeFromWatchlistSuccess()),
+          catchError((error) => of(MoviesApiActions.removeFromWatchlistFailure(error)))
+        )
+      )
+    ),
+  { functional: true }
+);
+
+export const MoviesEffects = { init$, moviesOnWatchlist$, addToWatchlist$, removeFromWatchlist$ };

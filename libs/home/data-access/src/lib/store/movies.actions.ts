@@ -7,6 +7,7 @@ export const MoviesPageActions = createActionGroup({
   events: {
     Init: emptyProps(),
     AddToWatchlist: (movie: Movie) => ({ movie }),
+    RemoveFromWatchlist: (movieId: number) => ({ movieId }),
   },
 });
 
@@ -19,5 +20,7 @@ export const MoviesApiActions = createActionGroup({
     'Load movies on watchlist failure': (error: string) => ({ error }),
     'Add to watchlist success': emptyProps(),
     'Add to watchlist failure': (error: string) => ({ error }),
+    'Remove from watchlist success': emptyProps(),
+    'Remove from watchlist failure': (error: string) => ({ error }),
   },
 });

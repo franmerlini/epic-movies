@@ -35,4 +35,12 @@ export class MoviesApiService {
     LocalStorageService.setItem<number[]>(LocalStorageKeys.WATCHLIST_IDS, newOnWatchlistIds);
     return of(true);
   }
+
+  removeFromWatchlist(movieId: number): Observable<boolean> {
+    // return this.http.delete<Movie>(`${this.url}/watchlist/${movieId}`);
+    const onWatchlistIds = LocalStorageService.getItem<number[]>(LocalStorageKeys.WATCHLIST_IDS);
+    const newOnWatchlistIds = onWatchlistIds?.filter((id) => id !== movieId);
+    LocalStorageService.setItem<number[]>(LocalStorageKeys.WATCHLIST_IDS, newOnWatchlistIds ?? []);
+    return of(true);
+  }
 }

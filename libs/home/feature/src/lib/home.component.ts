@@ -20,6 +20,7 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
           *ngFor="let movie of movies$ | async; trackBy: identify"
           [movie]="movie"
           (addToWatchlist)="onAddToWatchlist($event)"
+          (removeFromWatchlist)="onRemoveFromWatchlist($event)"
         />
       </div>
     </div>
@@ -41,5 +42,9 @@ export class HomeComponent implements OnInit {
 
   onAddToWatchlist(movie: Movie): void {
     this.store.dispatch(MoviesPageActions.addToWatchlist(movie));
+  }
+
+  onRemoveFromWatchlist(movieId: number): void {
+    this.store.dispatch(MoviesPageActions.removeFromWatchlist(movieId));
   }
 }
