@@ -1,1 +1,1 @@
-export * from './lib/shared-data-access-local-storage';
+export * from './lib/local-storage.service';
