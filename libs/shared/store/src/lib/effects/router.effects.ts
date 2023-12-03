@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Injectable, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -8,38 +8,29 @@ import { tap } from 'rxjs';
 
 import { RouterActions } from '../actions/router.actions';
 
-@Injectable()
-export class RouterEffects {
-  private readonly actions$ = inject(Actions);
-  private readonly router = inject(Router);
-  private readonly location = inject(Location);
+export const navigate$ = createEffect(
+  (actions$ = inject(Actions), router = inject(Router)) =>
+    actions$.pipe(
+      ofType(RouterActions.go),
+      tap(({ path, query: queryParams, extras }) => router.navigate(path, { queryParams, ...extras }))
+    ),
+  { functional: true, dispatch: false }
+);
 
-  navigate$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(RouterActions.go),
-        tap(({ path, query: queryParams, extras }) =>
-          this.router.navigate(path, { queryParams, ...extras })
-        )
-      ),
-    { dispatch: false }
-  );
+export const navigateBack$ = createEffect(
+  (actions$ = inject(Actions), location = inject(Location)) =>
+    actions$.pipe(
+      ofType(RouterActions.back),
+      tap(() => location.back())
+    ),
+  { functional: true, dispatch: false }
+);
 
-  navigateBack$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(RouterActions.back),
-        tap(() => this.location.back())
-      ),
-    { dispatch: false }
-  );
-
-  navigateForward$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(RouterActions.forward),
-        tap(() => this.location.forward())
-      ),
-    { dispatch: false }
-  );
-}
+export const navigateForward$ = createEffect(
+  (actions$ = inject(Actions), location = inject(Location)) =>
+    actions$.pipe(
+      ofType(RouterActions.forward),
+      tap(() => location.forward())
+    ),
+  { functional: true, dispatch: false }
+);

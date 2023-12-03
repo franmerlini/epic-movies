@@ -1,4 +1,5 @@
 import { NavigationExtras } from '@angular/router';
+
 import { createActionGroup, emptyProps } from '@ngrx/store';
 
 export const RouterActions = createActionGroup({
