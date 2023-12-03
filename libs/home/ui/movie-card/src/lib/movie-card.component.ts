@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Movie } from '@epic-movies/libs/shared/data-access/models';
@@ -16,6 +16,8 @@ export class MovieCardComponent implements OnChanges {
   @Input({ required: true }) movie!: Movie;
   @Input() isOnWatchlist!: boolean;
 
+  @Output() addToWatchlist = new EventEmitter<Movie>();
+
   imageUrl!: string;
   year!: number;
 
@@ -27,5 +29,10 @@ export class MovieCardComponent implements OnChanges {
     if (this.movie?.releasedDate) {
       this.year = new Date(this.movie.releasedDate).getFullYear();
     }
+  }
+
+  add(event: Event): void {
+    event.stopPropagation();
+    this.addToWatchlist.emit(this.movie);
   }
 }

@@ -38,26 +38,28 @@
           </button>
         </div>
 
-        <div class="tooltip" data-tip="Add to watchlist">
-          <button class="transition-opacity duration-300 hover:opacity-70" (click)="$event.stopPropagation()">
-            <!-- Circle plus icon -->
-            <svg
-              class="w-6 h-6 text-gray-800 dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-          </button>
-        </div>
+        <ng-container *ngIf="movie.isOnWatchlist; else plusCircle">
+          <div class="tooltip" data-tip="Remove from watchlist">
+            <button class="transition-opacity duration-300 hover:opacity-70">
+              <!-- Check circle icon -->
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </ng-container>
 
         <div class="tooltip" data-tip="Like">
           <button class="transition-opacity duration-300 hover:opacity-70" (click)="$event.stopPropagation()">
@@ -79,3 +81,26 @@
     </div>
   </div>
 </div>
+
+<ng-template #plusCircle>
+  <div class="tooltip" data-tip="Add to watchlist">
+    <button class="transition-opacity duration-300 hover:opacity-70" (click)="add($event)">
+      <!-- Plus circle icon -->
+      <svg
+        class="w-6 h-6 text-gray-800 dark:text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 20 20"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+    </button>
+  </div>
+</ng-template>
