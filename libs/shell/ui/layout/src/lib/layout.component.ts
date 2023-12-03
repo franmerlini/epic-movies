@@ -11,8 +11,8 @@ import { HeaderComponent } from '@epic-movies/libs/shell/ui/header';
   imports: [CommonModule, HeaderComponent, RouterOutlet, FooterComponent],
   template: `
     <div class="min-h-screen flex flex-col">
-      <lib-header />
-      <main class="flex justify-center grow">
+      <lib-header class="fixed w-full z-50" />
+      <main class="flex justify-center grow bg-base-100 py-8 mt-8">
         <router-outlet />
       </main>
       <lib-footer />
