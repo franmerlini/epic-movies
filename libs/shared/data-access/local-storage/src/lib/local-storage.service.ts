@@ -30,12 +30,12 @@ export class LocalStorageService {
     }, {});
   }
 
-  public static setItem(key: string, value: unknown) {
+  public static setItem<T>(key: string, value: T): void {
     const valueToStore = typeof value === 'string' ? value : JSON.stringify(value);
     localStorage.setItem(`${APP_PREFIX}${key}`, valueToStore);
   }
 
-  public static getItem(key: string): unknown {
+  public static getItem<T>(key: string): T | null {
     const value = localStorage.getItem(`${APP_PREFIX}${key}`);
 
     if (!value) return null;
