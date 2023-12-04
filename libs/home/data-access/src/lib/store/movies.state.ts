@@ -59,20 +59,18 @@ export const MoviesFeature = createFeature({
         return 0;
       })
     ),
-    selectMoviesOrderedByGenreAsc: createSelector(selectEntities, (entities) => {
-      const movies = Object.values(entities);
-      return movies.sort((a, b) => {
+    selectMoviesOrderedByReleaseDateAsc: createSelector(selectEntities, (entities) => {
+      return Object.values(entities).sort((a, b) => {
         if (a && b) {
-          return a.genres[0].localeCompare(b.genres[0]);
+          return new Date(a.releasedDate).getTime() - new Date(b.releasedDate).getTime();
         }
         return 0;
       });
     }),
-    selectMoviesOrderedByGenreDesc: createSelector(selectEntities, (entities) => {
-      const movies = Object.values(entities);
-      return movies.sort((a, b) => {
+    selectMoviesOrderedByReleaseDateDesc: createSelector(selectEntities, (entities) => {
+      return Object.values(entities).sort((a, b) => {
         if (a && b) {
-          return b.genres[0].localeCompare(a.genres[0]);
+          return new Date(b.releasedDate).getTime() - new Date(a.releasedDate).getTime();
         }
         return 0;
       });

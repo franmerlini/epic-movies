@@ -3,10 +3,10 @@
     <span>Order by</span>
     <select #select class="select select-bordered max-w-xs" (change)="onChange($event)">
       <option [value]="sortByEnum.SUGGESTED">Suggested</option>
-      <option [value]="sortByEnum.TITLE_ASC">Title (A-Z)</option>
-      <option [value]="sortByEnum.TITLE_DESC">Title (Z-A)</option>
-      <option [value]="sortByEnum.GENRE_ASC">Genre (A-Z)</option>
-      <option [value]="sortByEnum.GENRE_ASC">Genre (Z-A)</option>
+      <option [value]="sortByEnum.TITLE_ASC">Title (asc)</option>
+      <option [value]="sortByEnum.TITLE_DESC">Title (desc)</option>
+      <option [value]="sortByEnum.RELEASE_DATE_ASC">Release date (asc)</option>
+      <option [value]="sortByEnum.RELEASE_DATE_DESC">Release date (desc)</option>
     </select>
   </div>
 </div>

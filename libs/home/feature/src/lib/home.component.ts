@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { MoviesFeature, MoviesPageActions } from '@epic-movies/libs/home/data-access';
-import { ActionsBarComponent } from '@epic-movies/libs/home/ui/actions-bar';
+import { ActionsBarComponent, SortBy } from '@epic-movies/libs/home/ui/actions-bar';
 import { MovieCardComponent } from '@epic-movies/libs/home/ui/movie-card';
 import { Movie } from '@epic-movies/libs/shared/data-access/models';
 
@@ -56,17 +56,17 @@ export class HomeComponent implements OnInit {
 
   onSelectSortBy(sortBy: number): void {
     switch (sortBy) {
-      case 1:
+      case SortBy.TITLE_ASC:
         this.movies$ = this.store.select(MoviesFeature.selectMoviesOrderedByTitleAsc) as Observable<Movie[]>;
         break;
-      case 2:
+      case SortBy.TITLE_DESC:
         this.movies$ = this.store.select(MoviesFeature.selectMoviesOrderedByTitleDesc) as Observable<Movie[]>;
         break;
-      case 3:
-        this.movies$ = this.store.select(MoviesFeature.selectMoviesOrderedByGenreAsc) as Observable<Movie[]>;
+      case SortBy.RELEASE_DATE_ASC:
+        this.movies$ = this.store.select(MoviesFeature.selectMoviesOrderedByReleaseDateAsc) as Observable<Movie[]>;
         break;
-      case 4:
-        this.movies$ = this.store.select(MoviesFeature.selectMoviesOrderedByGenreDesc) as Observable<Movie[]>;
+      case SortBy.RELEASE_DATE_DESC:
+        this.movies$ = this.store.select(MoviesFeature.selectMoviesOrderedByReleaseDateDesc) as Observable<Movie[]>;
         break;
       default:
         this.movies$ = this.store.select(MoviesFeature.selectAll);

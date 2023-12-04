@@ -4,8 +4,8 @@ export enum SortBy {
   'SUGGESTED' = 0,
   'TITLE_ASC' = 1,
   'TITLE_DESC' = 2,
-  'GENRE_ASC' = 3,
-  'GENRE_DESC' = 4,
+  'RELEASE_DATE_ASC' = 3,
+  'RELEASE_DATE_DESC' = 4,
 }
 
 @Component({
