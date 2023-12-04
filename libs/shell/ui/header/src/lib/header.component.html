@@ -8,8 +8,9 @@
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
         <li><a [routerLink]="'/browse'">Home</a></li>
-        <li><a [routerLink]="'/movies'">Movies</a></li>
-        <li><a [routerLink]="'/my-list'">My list</a></li>
+        <div class="tooltip tooltip-right tooltip-primary" data-tip="comming soon!">
+          <li><a>My watchlist</a></li>
+        </div>
       </ul>
     </div>
 
@@ -18,8 +19,9 @@
     <div class="hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
         <li><a [routerLink]="'/browse'">Home</a></li>
-        <!-- <li><a [routerLink]="'/movies'">Movies</a></li>
-        <li><a [routerLink]="'/my-list'">My list</a></li> -->
+        <div class="tooltip tooltip-bottom tooltip-primary" data-tip="comming soon!">
+          <li><a>My watchlist</a></li>
+        </div>
       </ul>
     </div>
   </div>
