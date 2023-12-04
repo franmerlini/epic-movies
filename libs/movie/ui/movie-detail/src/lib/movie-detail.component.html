@@ -21,9 +21,18 @@
 
       <p>{{ movie.description }}</p>
 
-      <div class="flex items-center">
+      <div class="flex items-center gap-2">
         <span class="font-bold text-primary mr-2">Rating:</span>
-        <span>{{ movie.rating }}/10</span>
+        <div class="rating rating-md rating-half">
+          <input
+            *ngFor="let item of [].constructor(10); let i = index; let e = even"
+            type="radio"
+            [class]="['bg-primary', 'mask', 'mask-star-2', e ? 'mask-half-1' : 'mask-half-2', 'cursor-default']"
+            disabled
+            [checked]="getStarChecked(i + 1)"
+          />
+        </div>
+        <span>({{ movie.rating }}/10)</span>
       </div>
 
       <div class="flex items-center">

@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 import { SafePipe, ToEmbedPipe } from '@epic-movies/libs/movie/utils';
@@ -7,7 +7,7 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
 @Component({
   selector: 'lib-movie-detail',
   standalone: true,
-  imports: [SafePipe, ToEmbedPipe, NgIf],
+  imports: [SafePipe, ToEmbedPipe, NgIf, NgFor],
   templateUrl: './movie-detail.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -31,5 +31,9 @@ export class MovieDetailComponent implements OnChanges {
 
   remove(): void {
     this.removeFromWatchlist.emit(this.movie.id);
+  }
+
+  getStarChecked(index: number): boolean {
+    return index === Math.round(this.movie.rating);
   }
 }
