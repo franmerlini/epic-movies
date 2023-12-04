@@ -1,5 +1,5 @@
 import { AsyncPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -33,14 +33,10 @@ import { Movie } from '@epic-movies/libs/shared/data-access/models';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   private readonly store = inject(Store);
 
   movies$ = this.store.select(MoviesFeature.selectAll);
-
-  ngOnInit(): void {
-    this.store.dispatch(MoviesPageActions.init());
-  }
 
   identify(_: number, movie: Movie): number {
     return movie.id;
